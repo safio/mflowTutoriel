@@ -91,6 +91,30 @@ python hyperparameter_tuning.py --models KNN DecisionTree --search-type random -
 python hyperparameter_tuning.py --test-size 0.3 --random-state 123 --cv-folds 5
 ```
 
+### Cross-Validation Analysis:
+```bash
+# Cross-validate all models with default strategies (KFold, StratifiedKFold)
+python cross_validation.py
+
+# Cross-validate specific models only
+python cross_validation.py --models RandomForest SVM_Linear KNN
+
+# Use specific CV strategies
+python cross_validation.py --cv-strategies KFold StratifiedKFold ShuffleSplit
+
+# Customize number of folds
+python cross_validation.py --n-splits 10
+
+# Quick analysis with fewer folds
+python cross_validation.py --models DecisionTree KNN --n-splits 3
+
+# Comprehensive analysis with all strategies
+python cross_validation.py --cv-strategies KFold StratifiedKFold ShuffleSplit LeaveOneOut
+
+# Custom random state for reproducibility
+python cross_validation.py --random-state 123
+```
+
 ### Structured Output System:
 The `compare_models_structured.py` script organizes all outputs in a structured directory system:
 ```
@@ -100,6 +124,7 @@ outputs/
 │   ├── model_comparison/     # Comparison summaries
 │   ├── individual_models/    # Per-model results
 │   ├── hyperparameter_tuning/ # Hyperparameter tuning results
+│   ├── cross_validation/     # Cross-validation analysis results
 │   └── testing/             # Model testing results
 ├── visualizations/
 │   ├── confusion_matrices/   # Individual model confusion matrices
