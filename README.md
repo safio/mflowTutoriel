@@ -70,6 +70,27 @@ python compare_models.py --test-size 0.3 --random-state 123 --output-dir my_outp
 python compare_models_structured.py --test-size 0.3 --random-state 123 --output-dir my_outputs
 ```
 
+### Hyperparameter Tuning:
+```bash
+# Tune all models with both Grid and Random search (comprehensive but slow)
+python hyperparameter_tuning.py
+
+# Tune specific models only
+python hyperparameter_tuning.py --models RandomForest SVM_Linear LogisticRegression
+
+# Use only Random search (faster)
+python hyperparameter_tuning.py --search-type random --n-iter 50
+
+# Use only Grid search (thorough but slower)
+python hyperparameter_tuning.py --search-type grid
+
+# Quick tuning with fewer CV folds and iterations
+python hyperparameter_tuning.py --models KNN DecisionTree --search-type random --n-iter 20 --cv-folds 3
+
+# Custom settings
+python hyperparameter_tuning.py --test-size 0.3 --random-state 123 --cv-folds 5
+```
+
 ### Structured Output System:
 The `compare_models_structured.py` script organizes all outputs in a structured directory system:
 ```
@@ -78,6 +99,7 @@ outputs/
 ├── results/
 │   ├── model_comparison/     # Comparison summaries
 │   ├── individual_models/    # Per-model results
+│   ├── hyperparameter_tuning/ # Hyperparameter tuning results
 │   └── testing/             # Model testing results
 ├── visualizations/
 │   ├── confusion_matrices/   # Individual model confusion matrices
