@@ -173,20 +173,48 @@ models/
 # Structured outputs - exclude result files but keep folder structure
 outputs/logs/*                   # Training and debug logs
 !outputs/logs/.gitkeep
-outputs/results/*                # Experiment results and comparisons
-!outputs/results/.gitkeep
-!outputs/results/*/.gitkeep
-outputs/visualizations/*         # Generated plots and charts
+
+# Results directories - ignore all content but keep structure
+outputs/results/model_comparison/**/*
+!outputs/results/model_comparison/.gitkeep
+!outputs/results/model_comparison/**/.gitkeep
+
+outputs/results/individual_models/**/*
+!outputs/results/individual_models/.gitkeep
+!outputs/results/individual_models/**/.gitkeep
+
+outputs/results/hyperparameter_tuning/**/*
+!outputs/results/hyperparameter_tuning/.gitkeep
+!outputs/results/hyperparameter_tuning/**/.gitkeep
+
+outputs/results/cross_validation/**/*
+!outputs/results/cross_validation/.gitkeep
+!outputs/results/cross_validation/**/.gitkeep
+
+outputs/results/testing/**/*
+!outputs/results/testing/.gitkeep
+!outputs/results/testing/**/.gitkeep
+
+# Other structured outputs
+outputs/visualizations/**/*      # Generated plots and charts
 !outputs/visualizations/.gitkeep
-!outputs/visualizations/*/.gitkeep
-outputs/models/*                 # Saved model files
+!outputs/visualizations/**/.gitkeep
+
+outputs/models/**/*              # Saved model files
 !outputs/models/.gitkeep
-!outputs/models/*/.gitkeep
-outputs/data/*                   # Processed data files
+!outputs/models/**/.gitkeep
+
+outputs/data/**/*                # Processed data files
 !outputs/data/.gitkeep
-!outputs/data/*/.gitkeep
-# outputs/reports/               # Keep reports in version control (optional)
-# outputs/configs/               # Keep configurations in version control (optional)
+!outputs/data/**/.gitkeep
+
+# Keep reports and configs (optional - uncomment to ignore)
+# outputs/reports/**/*           # Keep reports in version control
+# !outputs/reports/.gitkeep
+# !outputs/reports/**/.gitkeep
+# outputs/configs/**/*           # Keep configurations in version control
+# !outputs/configs/.gitkeep
+# !outputs/configs/**/.gitkeep
 
 # Data files (uncomment if you don't want to track data)
 # *.csv
@@ -201,9 +229,21 @@ logs/
 # Temporary files
 *.tmp
 *.temp
-temp_*.png
-temp_*.csv
+temp_*
 test_results.csv
+*_temp_*
+
+# Cross-validation and hyperparameter tuning temporary files
+cv_results_*.csv
+hp_tuning_*.json
+model_comparison_*.csv
+hyperparameter_search_*.png
+cv_analysis_*.png
+cv_boxplot_*.png
+
+# MLflow temporary files
+mlflow_temp_*
+mlruns_backup/
 
 # IDE and Editor files
 .vscode/
