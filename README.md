@@ -54,6 +54,59 @@ python test_model.py --use-sample --log-to-mlflow
 python test_model.py --data-file sample_test_data.csv --log-to-mlflow
 ```
 
+### Compare different ML algorithms:
+```bash
+# Compare all available algorithms (both scripts now use organized outputs)
+python compare_models.py
+
+# Compare specific models only
+python compare_models.py --models SVM_Linear LogisticRegression KNN
+
+# Use the advanced structured version with detailed logging
+python compare_models_structured.py --models SVM_Linear LogisticRegression KNN
+
+# Customize data split, random state, and output directory
+python compare_models.py --test-size 0.3 --random-state 123 --output-dir my_outputs
+python compare_models_structured.py --test-size 0.3 --random-state 123 --output-dir my_outputs
+```
+
+### Structured Output System:
+The `compare_models_structured.py` script organizes all outputs in a structured directory system:
+```
+outputs/
+├── logs/                     # Training and detailed logs
+├── results/
+│   ├── model_comparison/     # Comparison summaries
+│   ├── individual_models/    # Per-model results
+│   └── testing/             # Model testing results
+├── visualizations/
+│   ├── confusion_matrices/   # Individual model confusion matrices
+│   ├── comparison_plots/     # Model comparison charts
+│   └── data_exploration/     # Data analysis plots
+├── reports/
+│   ├── classification/       # Classification reports
+│   └── summary/             # Executive summaries
+└── models/                  # Saved model artifacts
+```
+
+### Clean up old results:
+```bash
+# Clean files older than 7 days (dry run first)
+python cleanup_results.py --dry-run --days 7
+
+# Clean files older than 7 days
+python cleanup_results.py --days 7
+
+# Deep clean including Python cache files
+python cleanup_results.py --days 7 --deep-clean
+
+# Keep reports but clean other files
+python cleanup_results.py --days 7 --keep-reports
+
+# Clean MLflow artifacts older than 30 days
+python cleanup_results.py --mlflow-days 30
+```
+
 ## What you'll learn
 
 - How to track experiments with MLflow using the Iris dataset

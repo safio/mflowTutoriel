@@ -1,0 +1,6 @@
+{
+  "model_name": "SVM_Linear",
+  "run_id": "dea41ee20d1449a0a4adcf5711042911",
+  "timestamp": "20250926_154324",
+  "mlflow_experiment": "iris-model-comparison"
+}

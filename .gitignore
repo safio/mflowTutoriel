@@ -170,19 +170,29 @@ models/
 *.h5
 *.pb
 
+# Structured outputs (uncomment lines to track specific output types)
+outputs/logs/                    # Training and debug logs
+outputs/results/                 # Experiment results and comparisons
+outputs/visualizations/          # Generated plots and charts
+outputs/models/                  # Saved model files
+# outputs/reports/               # Keep reports in version control
+# outputs/configs/               # Keep configurations in version control
+
 # Data files (uncomment if you don't want to track data)
 # *.csv
 # *.json
 # *.parquet
 # *.xlsx
 
-# Logs
+# Logs (legacy - now organized in outputs/logs/)
 *.log
 logs/
 
 # Temporary files
 *.tmp
 *.temp
+temp_*.png
+temp_*.csv
 test_results.csv
 
 # IDE and Editor files

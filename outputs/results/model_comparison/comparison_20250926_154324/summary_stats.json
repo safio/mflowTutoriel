@@ -1,0 +1,11 @@
+{
+  "best_accuracy_model": "SVM_Linear",
+  "best_accuracy_score": 1.0,
+  "best_f1_model": "SVM_Linear",
+  "best_f1_score": 1.0,
+  "fastest_model": "SVM_Linear",
+  "fastest_time": 0.0019729137420654297,
+  "total_models": 2,
+  "average_accuracy": 0.95,
+  "average_training_time": 0.02166736125946045
+}

@@ -1,0 +1,6 @@
+{
+  "model_name": "RandomForest",
+  "run_id": "c768bcf499dc47558672cb277af4e816",
+  "timestamp": "20250926_154322",
+  "mlflow_experiment": "iris-model-comparison"
+}
