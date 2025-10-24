@@ -278,3 +278,5 @@ CLAUDE.md
 *.bak
 *.backup
 *~
+node_modules/*
+package*.json
