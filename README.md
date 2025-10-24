@@ -19,6 +19,7 @@ A comprehensive machine learning tutorial project demonstrating MLflow experimen
 - [Output Management](#output-management)
 - [Common Commands](#common-commands)
 - [Cleanup](#cleanup)
+- [Data Requirements](#data-requirements)
 - [Troubleshooting](#troubleshooting)
 
 ## Features
@@ -398,6 +399,14 @@ This project uses the built-in Iris dataset from scikit-learn, which includes:
 - 150 samples
 - 4 features: sepal length, sepal width, petal length, petal width
 - 3 classes: setosa, versicolor, virginica
+
+**For detailed information on how data is loaded and prepared, see [DATA_LOADING.md](DATA_LOADING.md).**
+
+The guide covers:
+- Direct loading vs DataManager class approaches
+- Data loading workflow and architecture
+- Different loading scenarios (training, testing, exploration)
+- Preprocessing options and configuration parameters
 
 For custom data testing, provide CSV files with the same feature structure.
 
