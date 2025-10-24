@@ -160,6 +160,7 @@ cython_debug/
 
 # MLflow specific
 mlruns/
+mlruns/.trash/          # Deleted experiments (never commit)
 mlartifacts/
 mlflow.db
 
